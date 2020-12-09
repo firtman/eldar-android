@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="label_form">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:labelFor">@id/editUsuario</item>
+        <item name="android:textColor">@color/label_form</item>
+        <item name="android:layout_marginTop">@dimen/margin_form</item>
+    </style>
+
+</resources>

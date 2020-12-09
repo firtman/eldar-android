@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Transporte</string>
+    <string name="descripcion_logo">Icono de la App</string>
+    <string name="button_login">Ingresar</string>
+    <string name="labelUsuario">Usuario:</string>
+    <string name="label_contrasena">Contraseña:</string>
+    <string name="label_empresa">Empresa:</string>
+</resources>
