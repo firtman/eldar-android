@@ -5,4 +5,6 @@
     <string name="labelUsuario">Usuario:</string>
     <string name="label_contrasena">Contraseña:</string>
     <string name="label_empresa">Empresa:</string>
+    <string name="button_aceptar">Aceptar</string>
+    <string name="login_mensaje_invalido">Las credenciales son inválidos</string>
 </resources>
