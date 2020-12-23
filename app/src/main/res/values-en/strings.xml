@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Transport</string>
+    <string name="descripcion_logo">App\'s Icon</string>
+    <string name="button_login">Enter</string>
+    <string name="labelUsuario">User:</string>
+    <string name="label_contrasena">Password:</string>
+    <string name="label_empresa">Company:</string>
+    <string name="button_aceptar">OK</string>
+    <string name="login_mensaje_invalido">Credentials are invalid</string>
+</resources>
