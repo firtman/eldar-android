@@ -15,9 +15,6 @@ class ClimaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_clima)
 
 
-        // COMIENZA UN SERVICIO
-        val intent = Intent(this, ClimaService::class.java)
-        startService(intent)
 
         // ESCUCHA UN BROADCAST - BROADCAST RECEIVER
         val intentFilter = IntentFilter(ClimaService.ACTION_TEMPERATURA)
@@ -29,6 +26,10 @@ class ClimaActivity : AppCompatActivity() {
             }
 
         }, intentFilter)
+
+        // COMIENZA UN SERVICIO
+        val intent = Intent(this, ClimaService::class.java)
+        startService(intent)
 
     }
 }
