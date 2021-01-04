@@ -35,14 +35,19 @@ class ClimaService : IntentService("Clima Service") {
     // Worker Thread
     override fun onHandleIntent(intent: Intent?) {
         val queue = Volley.newRequestQueue(this)
-        val url = "https://www.google.com"
+        val ciudad = intent?.getStringExtra("ciudad") ?: "buenos aires"
+        val url = "https://api.openweathermap.org/data/2.5/weather?q=$ciudad&appid=0685c4e8066b577d449babf619cf4ab4&units=metric"
 
         // Request a string response from the provided URL.
 
         val request = JsonObjectRequest(
             Request.Method.GET, url, null,
             Response.Listener {
-                it.getJSONObject("main").getDouble("temp")
+                val temperatura: Double = it.getJSONObject("main").getDouble("temp")
+
+                val broadcastIntent = Intent(ACTION_TEMPERATURA)
+                broadcastIntent.putExtra(EXTRA_TEMPERATURA, temperatura)
+                sendBroadcast(broadcastIntent)
             },
             Response.ErrorListener {
 
@@ -50,13 +55,6 @@ class ClimaService : IntentService("Clima Service") {
 
         // Add the request to the RequestQueue.
         queue.add(request)
-
-
-
-        val temperatura: Float = 31F
-        val broadcastIntent = Intent(ACTION_TEMPERATURA)
-        broadcastIntent.putExtra(EXTRA_TEMPERATURA, temperatura)
-        sendBroadcast(broadcastIntent)
     }
 
 

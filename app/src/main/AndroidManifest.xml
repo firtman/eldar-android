@@ -27,6 +27,7 @@
             android:exported="true" />
 
         <activity
+            android:screenOrientation="portrait"
             android:name=".ClimaActivity"
             android:label="Clima" />
         <activity
