@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Transporte">
-        <activity android:name=".NotasActivity"
+        <activity android:name=".activities.NotasActivity"
             android:label="@string/title_notas"></activity>
 
         <receiver
@@ -25,16 +25,16 @@
         </receiver>
 
         <service
-            android:name=".ClimaService"
+            android:name=".services.ClimaService"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-            android:name=".ClimaActivity"
+            android:name=".activities.ClimaActivity"
             android:label="Clima"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name=".activities.HomeActivity"
 
             android:label="Transporte 1.0" />
     </application>

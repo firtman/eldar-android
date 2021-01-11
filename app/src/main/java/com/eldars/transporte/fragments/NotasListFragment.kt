@@ -1,13 +1,18 @@
-package com.eldars.transporte
+package com.eldars.transporte.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.eldars.transporte.R
+import com.eldars.transporte.adapters.NotasAdapter
+import com.eldars.transporte.model.NotasProvider
 
 class NotasListFragment : Fragment() {
 
@@ -27,6 +32,19 @@ class NotasListFragment : Fragment() {
         rootView.findViewById<Button>(R.id.btnAgregarNota).setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_notasListFragment_to_notasAddFragment)
         )
+
+
+        // Configurar RecyclerView
+        val recyclerNotas = rootView.findViewById<RecyclerView>(R.id.recyclerNotas)
+        recyclerNotas.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,
+            false)
+        val adapter = NotasAdapter()
+        recyclerNotas.adapter = adapter
+
+        NotasProvider.getProvider().listAll().forEach {
+            Log.d("nota", it.toString())
+        }
+
         return rootView
     }
 

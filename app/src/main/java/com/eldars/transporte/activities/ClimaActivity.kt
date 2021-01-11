@@ -1,15 +1,8 @@
-package com.eldars.transporte
+package com.eldars.transporte.activities
 
-import android.annotation.SuppressLint
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
-import androidx.fragment.app.FragmentManager
+import com.eldars.transporte.R
 
 class ClimaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

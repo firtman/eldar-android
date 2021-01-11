@@ -1,4 +1,4 @@
-package com.eldars.transporte
+package com.eldars.transporte.fragments
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -12,14 +12,16 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
+import com.eldars.transporte.services.ClimaService
+import com.eldars.transporte.R
 
 class ClimaFragment : Fragment() {
 
     var textTemperatura: TextView? = null
     val receiver = object: BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
-            val temperatura = intent?.getDoubleExtra(ClimaService.EXTRA_TEMPERATURA,
+            val temperatura = intent?.getDoubleExtra(
+                ClimaService.EXTRA_TEMPERATURA,
                 -200.0) ?: -300.0
             if (temperatura<-100) {
                 textTemperatura?.text = "⚠️ Error"

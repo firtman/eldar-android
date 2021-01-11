@@ -1,14 +1,11 @@
-package com.eldars.transporte
+package com.eldars.transporte.services
 
 import android.app.IntentService
-import android.app.Service
 import android.content.Intent
-import android.os.IBinder
 import android.util.Log
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 
 /*

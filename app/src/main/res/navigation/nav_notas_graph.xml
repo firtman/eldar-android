@@ -7,24 +7,32 @@
 
     <fragment
         android:id="@+id/notasListFragment"
-        android:name="com.eldars.transporte.NotasListFragment"
+        android:name="com.eldars.transporte.fragments.NotasListFragment"
         android:label="fragment_notas_list"
         tools:layout="@layout/fragment_notas_list" >
         <action
             android:id="@+id/action_notasListFragment_to_notasAddFragment"
-            app:destination="@id/notasAddFragment" />
+            app:destination="@id/notasAddFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
         <action
             android:id="@+id/action_notasListFragment_to_notasDetailsFragment"
-            app:destination="@id/notasDetailsFragment" />
+            app:destination="@id/notasDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/notasAddFragment"
-        android:name="com.eldars.transporte.NotasAddFragment"
+        android:name="com.eldars.transporte.fragments.NotasAddFragment"
         android:label="fragment_notas_add"
         tools:layout="@layout/fragment_notas_add" />
     <fragment
         android:id="@+id/notasDetailsFragment"
-        android:name="com.eldars.transporte.NotasDetailsFragment"
+        android:name="com.eldars.transporte.fragments.NotasDetailsFragment"
         android:label="fragment_notas_details"
-        tools:layout="@layout/fragment_notas_details" />
+        tools:layout="@layout/fragment_notas_details"/>
 </navigation>
