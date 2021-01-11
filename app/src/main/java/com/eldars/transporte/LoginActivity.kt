@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.edit
+import androidx.navigation.Navigation.findNavController
 
 
 class LoginActivity : AppCompatActivity() {

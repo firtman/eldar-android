@@ -9,4 +9,5 @@
     <string name="login_mensaje_invalido">Las credenciales son inválidos</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_notas">Mis Notas</string>
 </resources>

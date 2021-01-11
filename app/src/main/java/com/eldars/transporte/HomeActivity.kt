@@ -24,6 +24,12 @@ class HomeActivity: AppCompatActivity() {
             val intent = Intent(this, ClimaActivity::class.java)
             startActivity(intent)
         }
+
+        val btnMisNotas: Button = findViewById(R.id.btnMisNotas)
+        btnMisNotas.setOnClickListener {
+            val intent = Intent(this, NotasActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
