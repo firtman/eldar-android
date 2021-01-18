@@ -44,6 +44,13 @@ class NotasListFragment : Fragment() {
         NotasProvider.getProvider().listAll().forEach {
             Log.d("nota", it.toString())
         }
+        NotasProvider.getProvider().registerListener {
+            adapter.notifyDataSetChanged()
+        }
+
+        NotasProvider.getProvider().registerListener {
+            Log.d("nota", "Cambiaron los datos")
+        }
 
         return rootView
     }
