@@ -23,7 +23,10 @@ class NotasAddFragment : Fragment() {
         //TODO Poner esto en un formulario con un botón de grabar
         NotasProvider.getProvider().addNota(Nota("titulo", "texto"))
         findNavController().navigateUp()
+
         return rootView
     }
+
+
 
 }

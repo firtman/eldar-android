@@ -1,5 +1,8 @@
 package com.eldars.transporte.model
 
+import androidx.room.Room
+import com.eldars.transporte.App
+
 class NotasProvider {
     companion object {
         private val _instance = NotasProvider()
@@ -8,19 +11,29 @@ class NotasProvider {
         }
     }
 
+    private var notas = mutableListOf<Nota>()
+
+    private var db: AppDatabase = Room.databaseBuilder(
+        App.context,
+        AppDatabase::class.java, "transporte"
+    ).allowMainThreadQueries().build()
+
+    init {
+        notas = db.notasDao().getAll().toMutableList()
+    }
+
+
     private val listeners = mutableListOf<()->Unit>()
     fun registerListener(listener: ()->Unit) {
         listeners.add(listener)
     }
 
-    private val notas = mutableListOf<Nota>(
-        Nota("Teléfono", "324234234234"),
-        Nota("Dirección", "dfsdfsdfs sdf sdsf"),
-    )
 
     fun addNota(nota: Nota) {
         notas.add(nota)
         listeners.forEach { it.invoke() }
+        // Actualizar la BD
+        db.notasDao().insert(nota)
     }
     fun listAll(): MutableList<Nota> {
         return notas
