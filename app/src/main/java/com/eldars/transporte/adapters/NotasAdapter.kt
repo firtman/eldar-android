@@ -19,12 +19,20 @@ class NotasAdapter: RecyclerView.Adapter<NotasAdapter.NotaViewHolder>() {
         }
     }
 
+    var rowSelectedListener: ((Int)->Unit)? = null
+
+    fun setOnRowSelected(listener: (Int)->Unit) {
+        rowSelectedListener = listener
+    }
+
     // enlaza los datos en un viewholder a partir de una posición
     override fun onBindViewHolder(holder: NotaViewHolder, position: Int) {
         val nota = NotasProvider.getProvider().get(position)
         nota?.let {
             holder.bind(nota)
-
+            holder.itemView.setOnClickListener {
+                rowSelectedListener?.let { it.invoke(position) }
+            }
             if (position % 2 == 0) {
                 holder.itemView.setBackgroundColor(Color.YELLOW)
             } else {

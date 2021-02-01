@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.eldars.transporte.R
@@ -40,6 +41,12 @@ class NotasListFragment : Fragment() {
             false)
         val adapter = NotasAdapter()
         recyclerNotas.adapter = adapter
+        adapter.setOnRowSelected { posicion ->
+            val bundle = Bundle()
+            bundle.putInt("posicion", posicion)
+            findNavController().navigate(R.id.action_notasListFragment_to_notasDetailsFragment,
+                bundle)
+        }
 
         NotasProvider.getProvider().listAll().forEach {
             Log.d("nota", it.toString())
