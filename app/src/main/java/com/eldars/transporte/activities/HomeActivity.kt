@@ -2,6 +2,7 @@ package com.eldars.transporte.activities
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -19,9 +20,16 @@ class HomeActivity: AppCompatActivity() {
         setContentView(R.layout.activity_home)
         Log.d("LifeCycle", "onCreate")
 
+
         val btnClima: Button = findViewById(R.id.btnClima)
         btnClima.setOnClickListener {
             val intent = Intent(this, ClimaActivity::class.java)
+            startActivity(intent)
+        }
+
+        val btnInfo: Button = findViewById(R.id.btnInfo)
+        btnInfo.setOnClickListener {
+            val intent = Intent(this, InfoActivity::class.java)
             startActivity(intent)
         }
 
@@ -29,6 +37,8 @@ class HomeActivity: AppCompatActivity() {
         btnMisNotas.setOnClickListener {
             val intent = Intent(this, NotasActivity::class.java)
             startActivity(intent)
+
+
         }
     }
 

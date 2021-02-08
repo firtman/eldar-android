@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.eldars.transporte">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -13,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Transporte">
-
+        <activity android:name=".activities.InfoActivity"></activity>
         <activity
             android:name=".activities.NotasActivity"
             android:label="@string/title_notas" />
@@ -35,7 +36,13 @@
         <activity
             android:name=".activities.ClimaActivity"
             android:label="Clima"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <data android:scheme="maxiclima" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activities.LoginActivity"
             android:screenOrientation="portrait">

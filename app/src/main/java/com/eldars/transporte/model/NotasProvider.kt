@@ -27,6 +27,9 @@ class NotasProvider {
     fun registerListener(listener: ()->Unit) {
         listeners.add(listener)
     }
+    fun unregisterListener(listener: ()->Unit) {
+
+    }
 
 
     fun addNota(nota: Nota) {
