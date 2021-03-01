@@ -1,6 +1,21 @@
 <!doctype html>
 <title>Info Util</title>
 
+<script>
+    function recibeInfo(texto) {
+        document.getElementById("recibido").innerHTML = texto
+        return "OK"
+    }
+    function informar() {
+        native.mostrarToast("Hola desde JavaScript")
+    }
+</script>
+
+<h1>Info recibida</h1>
+<p id="recibido"></p>
+
+<button onclick="informar()">Apretame</button>
+
 <h1>Teléfonos Utiles</h1>
 <p>234234</p>
 <p>234234</p>

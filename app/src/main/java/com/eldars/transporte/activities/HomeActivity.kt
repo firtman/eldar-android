@@ -37,9 +37,14 @@ class HomeActivity: AppCompatActivity() {
         btnMisNotas.setOnClickListener {
             val intent = Intent(this, NotasActivity::class.java)
             startActivity(intent)
-
-
         }
+
+        val btnUbicame: Button = findViewById(R.id.btnUbicame)
+        btnUbicame.setOnClickListener {
+            val intent = Intent(this, UbicameActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
